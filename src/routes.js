@@ -14,7 +14,7 @@ router.get('/', function(req, res) {
      res.redirect('/index.html');
 });
 
-router.get('/__update', function(req, res) {
+router.post('/__update', function(req, res) {
     console.log('Updating...');
 
     var body = req.body;
@@ -22,12 +22,13 @@ router.get('/__update', function(req, res) {
     // always redeploy
 
     // exit the process
-    console.log(__dirname);
-    child = child_process.spawn(__dirname + '../update.sh');
+    updateScript = __dirname + '/../update.sh';
+    console.log(updateScript);
+    child = child_process.spawn(updateScript);
     child.on('close', function(code) {
-      console.log('child process exited with code: ' + code);
+      console.log('child process closed with code: ' + code);
     });
-    //process.exit(0);
+    process.exit(0);
 });
 
 // sends the homepage
