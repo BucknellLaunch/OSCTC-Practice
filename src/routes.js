@@ -33,12 +33,12 @@ router.get('/*', function(req, res) {
      try {
           // escape filesystem '../'s
           req.url=  req.url.replace(/\/\.\./, '');
-          content = fs.readFileSync( '../public/' + req.url + '.html');
+          content = fs.readFileSync('../public' + req.url + '.html');
      } catch(err) {
           if (err.code !== "ENOENT") throw err;
 
           console.log('Error: not found');
-          res.status(404).redirect('/404');
+          res.status(404).end();
      }
 });
 
