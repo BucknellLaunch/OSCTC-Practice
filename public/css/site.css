@@ -1,0 +1,30 @@
+h1.site-header {
+  text-align: center;
+
+  margin-bottom: 50px;
+}
+
+body {
+  margin: 25px;
+  background: #78AB46;
+}
+
+div.inner-box {
+  border-radius: 10px;
+  padding: 30px;
+  background: white;
+  width: 500px;
+  margin: auto;
+}
+
+div.outer-box {
+  border-radius: 250px;
+  padding:45px;
+
+  background: #D3CAFF;
+  width: 750px;
+  margin: auto;
+}
+
+div.content {
+}

@@ -31,21 +31,4 @@ router.post('/__update', function(req, res) {
     process.exit(0);
 });
 
-// sends the homepage
-router.get('/*', function(req, res) {
-     // attempt to load the content
-     console.log(req.ip + ' requesting ' + req.url);
-     var content;
-     try {
-          // escape filesystem '../'s
-          req.url=  req.url.replace(/\/\.\./, '');
-          content = fs.readFileSync('../public' + req.url + '.html');
-     } catch(err) {
-          if (err.code !== "ENOENT") throw err;
-
-          console.log('Error: not found');
-          res.status(404).end();
-     }
-});
-
 module.exports = router;
