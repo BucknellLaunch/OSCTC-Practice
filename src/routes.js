@@ -20,6 +20,7 @@ router.post('/__update', function(req, res) {
     var body = req.body;
 
     // always redeploy
+    res.status(200).end();
 
     // exit the process
     updateScript = __dirname + '/../update.sh';
