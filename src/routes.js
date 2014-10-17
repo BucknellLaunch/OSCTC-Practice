@@ -14,7 +14,7 @@ router.get('/', function(req, res) {
      res.redirect('/index.html');
 });
 
-router.post('/__update', function(req, res) {
+router.get('/__update', function(req, res) {
     console.log('Updating...');
 
     var body = req.body;
@@ -22,8 +22,9 @@ router.post('/__update', function(req, res) {
     // always redeploy
 
     // exit the process
+    console.log(__dirname);
     child_process.spawn('./update.sh');
-    process.exit(0);
+    //process.exit(0);
 });
 
 // sends the homepage
