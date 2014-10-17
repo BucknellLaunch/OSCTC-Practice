@@ -16,7 +16,6 @@ router.get('/', function(req, res) {
 
 router.post('/__update', function(req, res) {
     console.log('Updating...');
-    console.log(JSON.stringify(req.body.ref_type));
 
     var body = req.body;
 
