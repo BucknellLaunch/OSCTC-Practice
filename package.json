@@ -1,0 +1,27 @@
+{
+  "name": "OSCTC-Practice",
+  "version": "0.1.0",
+  "description": "Site for open source comes to campus",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.4.5",
+    "underscore": "^1.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BucknellLaunch/OSCTC-Practice.git"
+  },
+  "keywords": [
+    "website"
+  ],
+  "author": "Colin Heinzmann",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BucknellLaunch/OSCTC-Practice/issues"
+  },
+  "homepage": ""
+}
