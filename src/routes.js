@@ -1,5 +1,6 @@
 var fs = require('fs');
 var express = require('express');
+var child_process = require('child_process');
 var router = express.Router();
 
 // allow client to get favicon
@@ -19,10 +20,17 @@ router.get('/__update', function(req, res) {
 
     var body = req.body;
 
+    // always redeploy
+
+
+    // exit the process
+    child_process.spawn('./update.sh');
+    process.exit(0);
+
     // only redeploy if someone tagged
-    if (body.ref_type !== 'tag') {
-        return;
-    }
+    //if (body.ref_type !== 'tag') {
+    //    return;
+    //}
 });
 
 // sends the homepage
