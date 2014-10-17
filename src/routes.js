@@ -23,8 +23,8 @@ router.get('/__update', function(req, res) {
 
     // exit the process
     console.log(__dirname);
-    child_process.spawn(__dirname + '../update.sh');
-    child_process.on('close', function(code) {
+    child = child_process.spawn(__dirname + '../update.sh');
+    child.on('close', function(code) {
       console.log('child process exited with code: ' + code);
     });
     //process.exit(0);
