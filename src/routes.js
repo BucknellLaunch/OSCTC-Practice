@@ -11,26 +11,20 @@ router.get('/favicon.ico', function(req, res) {
 
 // index redirection page
 router.get('/', function(req, res) {
-     res.redirect('/index');
+     res.redirect('/index.html');
 });
 
-router.get('/__update', function(req, res) {
-    console.log(JSON.stringify(req.body));
+router.post('/__update', function(req, res) {
+    console.log('Updating...');
     console.log(JSON.stringify(req.body.ref_type));
 
     var body = req.body;
 
     // always redeploy
 
-
     // exit the process
     child_process.spawn('./update.sh');
     process.exit(0);
-
-    // only redeploy if someone tagged
-    //if (body.ref_type !== 'tag') {
-    //    return;
-    //}
 });
 
 // sends the homepage
